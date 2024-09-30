@@ -16,6 +16,7 @@ class ChatListWidget extends StatelessWidget {
   final int active;
   final String? lastMessage;
   final int unseenMessageCount;
+
   const ChatListWidget({
     Key? key,
     required this.chatId,
@@ -48,7 +49,7 @@ class ChatListWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(
           horizontal: Const.kPaddingHorizontal,
         ),
-        height: 70,
+        height: MediaQuery.of(context).size.height * 0.1,
         decoration: BoxDecoration(
           color: MyTheme.white,
           borderRadius: const BorderRadius.all(
@@ -131,20 +132,21 @@ class ChatListWidget extends StatelessWidget {
               unseenMessageCount == 0
                   ? const Text('')
                   : Container(
-                      height: 20,
+                      height: 22,
                       width: 22,
                       decoration: BoxDecoration(
                           borderRadius: const BorderRadius.all(
                             Radius.circular(32.0),
                           ),
-                          color: MyTheme.zircon),
+                          color: MyTheme.medium_sea_green),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 7, vertical: 3),
-                        child: Text(
-                          unseenMessageCount.toString(),
-                          style:
-                              const TextStyle(color: MyTheme.app_accent_color),
+                        child: Center(
+                          child: Text(
+                            unseenMessageCount.toString(),
+                            style: const TextStyle(color: MyTheme.white),
+                          ),
                         ),
                       ),
                     )

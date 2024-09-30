@@ -85,6 +85,7 @@ class _PremiumPlansState extends State<PremiumPlans> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
+              width: MediaQuery.of(context).size.width * 0.7,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(
@@ -93,7 +94,7 @@ class _PremiumPlansState extends State<PremiumPlans> {
                   boxShadow: [CommonWidget.box_shadow()]),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 child: Column(
                   children: [
                     vm.list![index].image == null

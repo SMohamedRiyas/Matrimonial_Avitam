@@ -643,7 +643,7 @@ class _AccountState extends State<Account> {
                     Row(
                       children: [
                         Text(
-                          AppLocalizations.of(context)!.profile_screen_package,
+                          "${AppLocalizations.of(context)!.profile_screen_package}: ",
                           style: Styles.regular_arsenic_12,
                         ),
                         Text(
