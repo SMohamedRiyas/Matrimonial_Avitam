@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "990794745524",
+    "project_id": "matrimonalapp-8052b",
+    "storage_bucket": "matrimonalapp-8052b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990794745524:android:13aa7da9dcb6ba585b79e1",
+        "android_client_info": {
+          "package_name": "com.avitam.matrimonal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCefY6ZDt9DSzTr--ID4he6nS8iZIGgHkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
