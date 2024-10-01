@@ -7,6 +7,7 @@ class GroupItemWithChild extends StatelessWidget {
   final Widget? child;
   final TextStyle? style;
   final bool? isMandatory;
+
   const GroupItemWithChild({
     Key? key,
     this.title,

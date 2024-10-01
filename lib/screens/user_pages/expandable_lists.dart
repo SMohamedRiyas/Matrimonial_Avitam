@@ -19,11 +19,21 @@ import 'package:active_matrimonial_flutter_app/screens/public_profile_expandable
 import 'package:active_matrimonial_flutter_app/screens/public_profile_expandable_cards/pp_usercontact_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ExpandableLists extends StatelessWidget {
   final int userId;
 
-  const ExpandableLists({required this.userId});
+  ExpandableLists({required this.userId});
+
+  final Widget networkSvg = SvgPicture.network(
+    height: 200, width: double.infinity,
+    'https://jyotish-software.s3.ap-south-1.amazonaws.com/Chart_1727774906588.svg',
+    // semanticsLabel: 'A shark?!',
+    // placeholderBuilder: (BuildContext context) => Container(
+    //     padding: const EdgeInsets.all(30.0),
+    //     child: const CircularProgressIndicator()),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -204,6 +214,18 @@ class ExpandableLists extends StatelessWidget {
                   Const.height20,
                 ],
               ),
+            MyProfileListData(
+                title2: "Chart", // Localized 'About'
+                icon2: 'assets/icon/icon_left_qoute.png',
+                pp2: Container(
+                  child: SvgPicture.network(
+                      // placeholderBuilder: (context) =>
+                      //     CircularProgressIndicator(),
+                      height: 100,
+                      width: 100,
+                      'https://jyotish-software.s3.ap-south-1.amazonaws.com/D9_Chart_1727775164082.svg'),
+                )).getExpandableWidget(context, index: 0),
+            Const.height20,
             if (settingIsActive("member_permanent_address_section", "on"))
               Column(
                 children: [

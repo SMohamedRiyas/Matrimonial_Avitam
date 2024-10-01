@@ -299,6 +299,20 @@ class _AccountState extends State<Account> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
+                    MyTextButton(
+                      onPressed: () =>
+                          NavigatorPush.push(context, const MyGallery()),
+                      text: Padding(
+                        padding: const EdgeInsets.only(left: 4.0, right: 4.0),
+                        child: Text(
+                          AppLocalizations.of(context)!.profile_screen_gallery,
+                          style: Styles.regularWhite(context, 3),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
                     // public profile
                     MyTextButton(
                       text: Padding(
@@ -317,7 +331,7 @@ class _AccountState extends State<Account> {
                       ),
                     ),
                     const SizedBox(
-                      width: 2,
+                      width: 20,
                     ),
                     // manage profile
                     MyTextButton(
@@ -336,17 +350,6 @@ class _AccountState extends State<Account> {
                       width: 2,
                     ),
                     // gallery
-                    MyTextButton(
-                      onPressed: () =>
-                          NavigatorPush.push(context, const MyGallery()),
-                      text: Padding(
-                        padding: const EdgeInsets.only(left: 4.0, right: 4.0),
-                        child: Text(
-                          AppLocalizations.of(context)!.profile_screen_gallery,
-                          style: Styles.regularWhite(context, 3),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
