@@ -49,7 +49,7 @@ class ChatListWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(
           horizontal: Const.kPaddingHorizontal,
         ),
-        height: MediaQuery.of(context).size.height * 0.1,
+        height: MediaQuery.of(context).size.height * 0.10,
         decoration: BoxDecoration(
           color: MyTheme.white,
           borderRadius: const BorderRadius.all(
@@ -73,8 +73,8 @@ class ChatListWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(25.0),
                         child: SizedBox(
-                          height: 50,
-                          width: 50,
+                          height: 45,
+                          width: 45,
                           child: MyImages.normalImage(photo),
                         ),
                       ),

@@ -31,6 +31,7 @@ class _SupportTicketState extends State<SupportTicket> {
   final _formKey = GlobalKey<FormState>();
 
   QuillController _reply_controller = QuillController.basic();
+
   Future getImage() async {
     try {
       final image = await store.state.supportTicketCreateState!.picker
@@ -643,8 +644,8 @@ class _SupportTicketState extends State<SupportTicket> {
                     child: TextButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(MyTheme.white),
-                          shape: MaterialStateProperty.all(
+                              WidgetStateProperty.all<Color>(MyTheme.white),
+                          shape: WidgetStateProperty.all(
                             const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(8),

@@ -105,9 +105,9 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
                           NavigatorPush.push(context, const AppNavigation());
                         },
                         style: ButtonStyle(
-                          fixedSize: MaterialStateProperty.all(
-                              const Size(144.0, 52.0)),
-                          shape: MaterialStateProperty.all(
+                          fixedSize:
+                              WidgetStateProperty.all(const Size(144.0, 52.0)),
+                          shape: WidgetStateProperty.all(
                             const RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30.0)),

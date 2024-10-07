@@ -175,9 +175,9 @@ class _AccountState extends State<Account> {
     return Container(
       width: DeviceInfo(context).width,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(32.0),
-            bottomRight: Radius.circular(32.0)),
+        // borderRadius: const BorderRadius.only(
+        //     bottomLeft: Radius.circular(32.0),
+        //     bottomRight: Radius.circular(32.0)),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: const Alignment(0.8, 1),
@@ -189,7 +189,8 @@ class _AccountState extends State<Account> {
       ),
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(right: 10.0, left: 10.0, top: 10),
+          padding: const EdgeInsets.only(
+              right: 10.0, left: 10.0, top: 10, bottom: 0.0),
           child: Column(
             children: [
               // image name email and other more vertz field
@@ -310,7 +311,7 @@ class _AccountState extends State<Account> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     // public profile
@@ -437,7 +438,9 @@ class _AccountState extends State<Account> {
     }
 
     gridItems.add(GridSquareCard(
-      onpressed: LanguageScreen(),
+      onpressed: const LanguageScreen(
+        fromGrid: true,
+      ),
       icon: "icon_white_lang.png",
       isSmallScreen: false,
       text: AppLocalizations.of(context)!.public_profile_Lang,

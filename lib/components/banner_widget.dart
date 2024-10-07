@@ -32,7 +32,7 @@ class BannerWidget extends StatelessWidget {
           width: DeviceInfo(context).width,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
-              Radius.circular(16),
+              Radius.circular(15),
             ),
           ),
           child: isFetching

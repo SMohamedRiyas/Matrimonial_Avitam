@@ -180,7 +180,7 @@ class _ExploreState extends State<Explore> {
         // real reviews
         Const.height10,
         Container(
-          // height: MediaQuery.of(context).size.height * 0.46,
+          // height: 450,
           width: DeviceInfo(context).width,
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -229,10 +229,10 @@ class _ExploreState extends State<Explore> {
                                       ),
                                     ),
                                   ),
-                                  Const.height15,
+                                  Const.height10,
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
+                                        vertical: 10, horizontal: 10),
                                     child: Text(
                                       vm.reviews!.items![index].review!,
                                       textAlign: TextAlign.center,
@@ -248,7 +248,7 @@ class _ExploreState extends State<Explore> {
                               );
                             },
                             options: CarouselOptions(
-                              height: MediaQuery.of(context).size.height * 0.47,
+                              height: MediaQuery.of(context).size.height * 0.62,
                               enlargeCenterPage: true,
                               autoPlayInterval: const Duration(seconds: 10),
                               viewportFraction: 1,

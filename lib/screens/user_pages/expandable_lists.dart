@@ -215,15 +215,15 @@ class ExpandableLists extends StatelessWidget {
                 ],
               ),
             MyProfileListData(
-                title2: "Chart", // Localized 'About'
+                title2:
+                    AppLocalizations.of(context)!.chart, // Localized 'About'
                 icon2: 'assets/icon/icon_left_qoute.png',
                 pp2: Container(
-                  child: SvgPicture.network(
+                  child: Image.asset("assets/images/Screenshot (38).png"
                       // placeholderBuilder: (context) =>
                       //     CircularProgressIndicator(),
-                      height: 100,
-                      width: 100,
-                      'https://jyotish-software.s3.ap-south-1.amazonaws.com/D9_Chart_1727775164082.svg'),
+                      // 'https://jyotish-software.s3.ap-south-1.amazonaws.com/D9_Chart_1727775164082.svg',
+                      ),
                 )).getExpandableWidget(context, index: 0),
             Const.height20,
             if (settingIsActive("member_permanent_address_section", "on"))

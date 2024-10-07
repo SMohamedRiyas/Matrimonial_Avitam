@@ -1,6 +1,5 @@
 import 'package:active_matrimonial_flutter_app/components/common_widget.dart';
 import 'package:active_matrimonial_flutter_app/components/my_images.dart';
-import 'package:active_matrimonial_flutter_app/components/navigation_button.dart';
 import 'package:active_matrimonial_flutter_app/components/user_profile_action_button.dart';
 import 'package:active_matrimonial_flutter_app/const/my_theme.dart';
 import 'package:active_matrimonial_flutter_app/const/style.dart';
@@ -333,24 +332,25 @@ class _UserPublicProfileState extends State<UserPublicProfile> {
             MyTheme.gradient_color_2,
           ],
         ),
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(32.0),
-          bottomRight: Radius.circular(32.0),
-        ),
+        // borderRadius: const BorderRadius.only(
+        //   bottomLeft: Radius.circular(32.0),
+        //   bottomRight: Radius.circular(32.0),
+        // ),
       ),
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+          padding:
+              const EdgeInsets.only(left: 10.0, bottom: 0, right: 10, top: 10),
           child: Column(
             children: [
               _buildProfileHeaderRow(state, context),
               const SizedBox(height: 10),
-              const Divider(color: Colors.white),
+              Divider(thickness: 1, color: Colors.white.withOpacity(.50)),
               const SizedBox(height: 10),
               _buildProfileDetailsRow(state, context),
               const SizedBox(height: 10),
               _buildTabBar(),
-              const SizedBox(height: 18),
+              const SizedBox(height: 10),
               if (!isAuthUser) _buildActionButtons(context, state),
             ],
           ),
@@ -493,22 +493,28 @@ class _UserPublicProfileState extends State<UserPublicProfile> {
 
   TabBar _buildTabBar() {
     return TabBar(
+      labelColor: Colors.white,
+      unselectedLabelColor: Colors.white54,
       isScrollable: true,
       dividerHeight: 0.0,
       tabAlignment: TabAlignment.start,
-      indicatorColor: Colors.transparent,
+      indicatorColor: Colors.white,
       tabs: [
         Tab(
-            child: NavigationButton(
-                text: AppLocalizations.of(context)!.home_screen_full_profile)),
+          text: AppLocalizations.of(context)!.home_screen_full_profile,
+          // child: NavigationButton(
+          //     text: AppLocalizations.of(context)!.home_screen_full_profile)
+        ),
         if (settingIsActive("member_partner_expectation_section", "on"))
           Tab(
-              child: NavigationButton(
-                  text: AppLocalizations.of(context)!
-                      .my_profile_partner_preference)),
-        Tab(
-            child: NavigationButton(
-                text: AppLocalizations.of(context)!.profile_screen_gallery)),
+              text:
+                  AppLocalizations.of(context)!.my_profile_partner_preference),
+        // child: NavigationButton(
+        //     text: AppLocalizations.of(context)!
+        //         .my_profile_partner_preference)),
+        Tab(text: AppLocalizations.of(context)!.profile_screen_gallery),
+        // child: NavigationButton(
+        //     text: AppLocalizations.of(context)!.profile_screen_gallery)),
       ],
     );
   }

@@ -4,7 +4,6 @@ import 'package:active_matrimonial_flutter_app/components/my_text_button.dart';
 import 'package:active_matrimonial_flutter_app/const/style.dart';
 import 'package:active_matrimonial_flutter_app/helpers/device_info.dart';
 import 'package:active_matrimonial_flutter_app/helpers/navigator_push.dart';
-import 'package:active_matrimonial_flutter_app/screens/app_navigation.dart';
 import 'package:active_matrimonial_flutter_app/screens/core.dart';
 import 'package:active_matrimonial_flutter_app/screens/startup_pages/landing_page/landing.dart';
 import 'package:active_matrimonial_flutter_app/screens/startup_pages/on_boarding_pages.dart';
@@ -13,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../helpers/shared_pref.dart';
+import '../../my_dashboard_pages/language/language_screen.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -111,7 +111,9 @@ class _LandingPageState extends State<LandingPage> {
                                 SharedPref().isView = true;
                                 NavigatorPush.push(
                                   context,
-                                  const AppNavigation(),
+                                  const LanguageScreen(
+                                    fromGrid: false,
+                                  ),
                                 );
                               },
                               text: Text(

@@ -207,7 +207,7 @@
   "public_profile_edu_details": "Education Details",
   "public_profile_physical_attri": "Physical Attributes",
   "public_profile_Lang": "Language",
-  "change_language": "Change Language",
+  "change_language": "Confirm Language",
   "public_profile_your_lang": "Your Language",
   "public_profile_mother_tounge": "Mother Tongue",
   "public_profile_hobbies_n_interest": "Hobbies & Interest",
@@ -415,6 +415,7 @@
   "select_1": "Select one",
   "no_more": "No more data",
   "select_one_1": "Select one",
+  "chart": "Chart",
   "a": "",
   "a": "",
   "a": ""

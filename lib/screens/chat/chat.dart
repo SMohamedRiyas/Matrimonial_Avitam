@@ -29,6 +29,7 @@ class Chat extends StatefulWidget {
 
 class _ChatState extends State<Chat> {
   final my_text_controller = TextEditingController();
+
   // String? value;
   // var myId = prefs.getInt(Const.userId);
   var myId = store.state.authState!.userData!.id!;
@@ -131,7 +132,7 @@ class _ChatState extends State<Chat> {
                                             horizontal: 8, vertical: 10),
                                         decoration:
                                             messageDecoration(chatDetails),
-                                        // height: 50,
+                                        height: 50,
 
                                         child: chatDetails!.attachment!.isEmpty
                                             ? Text(

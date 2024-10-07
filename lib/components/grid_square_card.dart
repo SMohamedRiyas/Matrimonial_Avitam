@@ -33,8 +33,8 @@ class GridSquareCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: 45,
+            height: 45,
             decoration: BoxDecoration(
               color: MyTheme.app_accent_color,
               borderRadius: const BorderRadius.all(

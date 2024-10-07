@@ -341,8 +341,8 @@ class _BasicInformationState extends State<BasicInformation> {
                     child: TextButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(MyTheme.white),
-                          shape: MaterialStateProperty.all(
+                              WidgetStateProperty.all<Color>(MyTheme.white),
+                          shape: WidgetStateProperty.all(
                             const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(8),

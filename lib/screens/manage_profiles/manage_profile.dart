@@ -34,7 +34,6 @@ import 'package:active_matrimonial_flutter_app/screens/public_profile_expandable
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../components/navigation_button.dart';
 import '../../redux/libs/manage_profile/manage_profile_middleware/manage_profile_get_middlewares.dart';
 import '../../redux/libs/manage_profile/manage_profile_middleware/manage_profile_update_middlewares.dart';
 import '../public_profile_expandable_cards/pp_education_info.dart';
@@ -453,7 +452,6 @@ class _MyProfileState extends State<MyProfile> {
 
   Container buildGradientLayout(BuildContext context, AppState state) {
     return Container(
-        height: 250,
         decoration: BoxDecoration(
           // linear gradient
           gradient: LinearGradient(
@@ -465,131 +463,138 @@ class _MyProfileState extends State<MyProfile> {
             ],
           ),
           // border radius and stuff
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(32.0),
-            bottomRight: Radius.circular(32.0),
-          ),
+          // borderRadius: const BorderRadius.only(
+          //   bottomLeft: Radius.circular(32.0),
+          //   bottomRight: Radius.circular(32.0),
+          // ),
         ),
         child: SafeArea(
-          child: SizedBox(
-            height: 220,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10),
-              child: Column(
-                children: [
-                  /// image name email and other more vertz field
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          InkWell(
-                            onTap: () => Navigator.pop(context),
-                            child: Image.asset(
-                              'assets/icon/icon_pop_white.png',
-                              height: 20,
-                              width: 20,
+          child: Padding(
+            padding: const EdgeInsets.only(
+                right: 10.0, left: 10.0, top: 10, bottom: 0),
+            child: Column(
+              children: [
+                /// image name email and other more vertz field
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: () => Navigator.pop(context),
+                          child: Image.asset(
+                            'assets/icon/icon_pop_white.png',
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(25.0),
+                          child: SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: MyImages.normalImage(
+                                state.accountState!.profileData?.memberPhoto! ??
+                                    ""),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              store.state.authState?.userData?.name ?? "",
+                              style: Styles.bold_white_14,
                             ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(25.0),
-                            child: SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: MyImages.normalImage(state.accountState!
-                                      .profileData?.memberPhoto! ??
-                                  ""),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                store.state.authState?.userData?.name ?? "",
-                                style: Styles.bold_white_14,
-                              ),
-                              Text(
-                                store.state.authState?.userData?.email ?? "",
-                                style: Styles.regular_white_12,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
+                            Text(
+                              store.state.authState?.userData?.email ?? "",
+                              style: Styles.regular_white_12,
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
 
-                  const SizedBox(
-                    height: 18,
-                  ),
+                const SizedBox(
+                  height: 10,
+                ),
 
-                  /// horzontal line
-                  Divider(
-                    thickness: 1,
-                    color: Colors.white.withOpacity(.50),
-                  ),
+                /// horzontal line
+                Divider(
+                  thickness: 1,
+                  color: Colors.white.withOpacity(.50),
+                ),
 
-                  const SizedBox(
-                    height: 20,
-                  ),
+                const SizedBox(
+                  height: 10,
+                ),
 
-                  /// remaining boxes in are below
-                  Row(
-                    children: [
-                      Text(
-                        '${store.state.authState?.userData?.birthday ?? ''} years, ${store.state.authState?.userData?.height ?? ''} ft, ${store.state.authState?.userData?.maritalStatusId?.name ?? ''}',
-                        style: Styles.regular_white_10,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TabBar(
-                    unselectedLabelStyle: TextStyle(color: MyTheme.light_grey),
-                    onTap: (value) {
-                      store.dispatch(UpdateTab(value));
-                    },
-                    isScrollable: true,
-                    dividerHeight: 0.0,
-                    tabAlignment: TabAlignment.start,
-                    indicatorColor: Colors.transparent,
-                    tabs: [
+                /// remaining boxes in are below
+                Row(
+                  children: [
+                    Text(
+                      '${store.state.authState?.userData?.birthday ?? ''} years, ${store.state.authState?.userData?.height ?? ''} ft, ${store.state.authState?.userData?.maritalStatusId?.name ?? ''}',
+                      style: Styles.regular_white_10,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TabBar(
+                  // unselectedLabelStyle: TextStyle(color: Colors.white54),
+                  unselectedLabelColor: Colors.white54,
+                  labelColor: Colors.white,
+                  onTap: (value) {
+                    store.dispatch(UpdateTab(value));
+                  },
+                  isScrollable: true,
+                  dividerHeight: 0.0,
+                  tabAlignment: TabAlignment.start,
+                  indicatorColor: Colors.white,
+                  tabs: [
+                    Tab(
+                      text: AppLocalizations.of(context)!
+                          .my_profile_detailed_profile,
+                      // child: NavigationButton(
+                      //   color: state.manageProfileCombineState!
+                      //               .selectedTabIndex ==
+                      //           0
+                      //       ? MyTheme.gull_grey.withOpacity(0.2)
+                      //       : null,
+                      //   text: AppLocalizations.of(context)!
+                      //       .my_profile_detailed_profile,
+                      // ),
+                    ),
+                    if (settingIsActive(
+                        "member_partner_expectation_section", "on"))
                       Tab(
-                        child: NavigationButton(
-                          color: state.manageProfileCombineState!
-                                      .selectedTabIndex ==
-                                  0
-                              ? MyTheme.gull_grey.withOpacity(0.2)
-                              : null,
-                          text: AppLocalizations.of(context)!
-                              .my_profile_detailed_profile,
-                        ),
+                        text: AppLocalizations.of(context)!
+                            .my_profile_partner_preference,
+                        // child: NavigationButton(
+                        //   color: state.manageProfileCombineState!
+                        //               .selectedTabIndex ==
+                        //           1
+                        //       ? MyTheme.gull_grey.withOpacity(0.2)
+                        //       : null,
+                        //   text: AppLocalizations.of(context)!
+                        //       .my_profile_partner_preference,
+                        // ),
                       ),
-                      if (settingIsActive(
-                          "member_partner_expectation_section", "on"))
-                        Tab(
-                          child: NavigationButton(
-                            color: state.manageProfileCombineState!
-                                        .selectedTabIndex ==
-                                    1
-                                ? MyTheme.gull_grey.withOpacity(0.2)
-                                : null,
-                            text: AppLocalizations.of(context)!
-                                .my_profile_partner_preference,
-                          ),
-                        ),
-                    ],
-                  ),
-                  // horizontal line end
-                ],
-              ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                )
+                // horizontal line end
+              ],
             ),
           ),
         ));

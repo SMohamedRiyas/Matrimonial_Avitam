@@ -14,7 +14,6 @@ import 'package:active_matrimonial_flutter_app/screens/auth/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../components/contact_faq_widget.dart';
@@ -23,7 +22,6 @@ import '../../../components/my_gradient_container.dart';
 import '../../../helpers/functions.dart';
 import '../../../helpers/main_helpers.dart';
 import '../../../redux/libs/staticPage/static_page.dart';
-import '../../my_dashboard_pages/language/language_screen.dart';
 import '../forgetPassword/forget_password.dart';
 
 class Login extends StatefulWidget {
@@ -81,16 +79,16 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: IconButton(
-                            icon: const Icon(Icons.language_outlined),
-                            onPressed: () {
-                              print("button clicked");
-                              Get.to(() => const LanguageScreen());
-                            },
-                          ),
-                        ),
+                        // Align(
+                        //   alignment: Alignment.topRight,
+                        //   child: IconButton(
+                        //     icon: const Icon(Icons.language_outlined),
+                        //     onPressed: () {
+                        //       print("button clicked");
+                        //       Get.to(() => const LanguageScreen());
+                        //     },
+                        //   ),
+                        // ),
                         GroupItemWithChild(
                           title: isOtpSystem!
                               ? state.signInState!.isPhone!
@@ -359,25 +357,28 @@ class _LoginState extends State<Login> {
       decoration: BoxDecoration(
           gradient: Styles.buildLinearGradient(
               begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 38,
-          ),
-          const ImageIcon(
-            AssetImage('assets/logo/app_logo.png'),
-            size: 93,
-            color: MyTheme.white,
-          ),
-          Text(
-            AppLocalizations.of(context)!.login_text_title,
-            style: Styles.bold_white_22,
-          ),
-          Text(
-            AppLocalizations.of(context)!.login_text_sub_title,
-            style: Styles.regular_white_14,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 38.0),
+        child: Column(
+          children: [
+            // const SizedBox(
+            //   height: 38,
+            // ),
+            const ImageIcon(
+              AssetImage('assets/logo/app_logo.png'),
+              size: 93,
+              color: MyTheme.white,
+            ),
+            Text(
+              AppLocalizations.of(context)!.login_text_title,
+              style: Styles.bold_white_22,
+            ),
+            Text(
+              AppLocalizations.of(context)!.login_text_sub_title,
+              style: Styles.regular_white_14,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -14,6 +14,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PackageDetails extends StatelessWidget {
   int? packageId;
+
   PackageDetails({Key? key, this.packageId}) : super(key: key);
 
   @override
@@ -151,8 +152,8 @@ class PackageDetails extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            MyTheme.app_accent_color)),
+                        backgroundColor:
+                            WidgetStateProperty.all(MyTheme.app_accent_color)),
                     child: Text(
                       AppLocalizations.of(context)!.profile_screen_upgrade,
                       style: Styles.bold_white_14,

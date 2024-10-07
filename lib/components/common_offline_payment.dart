@@ -147,8 +147,8 @@ class _CommonOfflinePaymentState extends State<CommonOfflinePayment> {
                       child: TextButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all<Color>(MyTheme.white),
-                            shape: MaterialStateProperty.all(
+                                WidgetStateProperty.all<Color>(MyTheme.white),
+                            shape: WidgetStateProperty.all(
                               const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(8),
@@ -181,8 +181,8 @@ class _CommonOfflinePaymentState extends State<CommonOfflinePayment> {
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(MyTheme.app_accent_color),
-                    fixedSize: MaterialStateProperty.all(
+                        WidgetStateProperty.all(MyTheme.app_accent_color),
+                    fixedSize: WidgetStateProperty.all(
                       const Size(100.0, 20.0),
                     ),
                   ),

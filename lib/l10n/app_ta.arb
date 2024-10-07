@@ -206,7 +206,7 @@
   "public_profile_physical_attri": "உடல் பண்புகள்",
   "public_profile_Lang": "மொழி",
   "public_profile_your_lang": "உங்கள் மொழி",
-   "change_language": "மொழியை மாற்றவும்",
+   "change_language": "மொழியை உறுதிப்படுத்தவும்",
   "public_profile_mother_tounge": "தாய் மொழி",
   "public_profile_hobbies_n_interest": "பொழுதுபோக்கு & ஆர்வம்",
   "public_profile_your_hobbies_n_interest": "உங்கள் பொழுதுபோக்கு & ஆர்வம்",
@@ -411,7 +411,7 @@
   "contact_us": "தொடர்பு கொள்ளுங்கள்",
   "select_1": "தேர்ந்தெடுக்கவும்",
   "no_more": "மேலும் தரவு இல்லை",
-
+  "chart": "விளக்கப்படம்",
   "a": "",
   "a": "",
   "a": ""

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static const Color app_accent_color = Color.fromRGBO(86, 120, 243, 1);
+  static const Color app_accent_color = Color(0xff1E3E62);
 
 // progress bar color
   static Color light_sea_green = Color.fromRGBO(23, 184, 168, 1);
@@ -26,6 +26,6 @@ class MyTheme {
   static Color success = Color.fromRGBO(133, 181, 103, 1);
   static Color failure = Color.fromRGBO(217, 77, 75, 1);
 
-  static Color gradient_color_1 = Color.fromRGBO(126, 86, 243, 1);
-  static Color gradient_color_2 = Color.fromRGBO(86, 120, 243, 1);
+  static Color gradient_color_1 = Color(0xff0A2647);
+  static Color gradient_color_2 = Color(0xff1E3E62);
 }

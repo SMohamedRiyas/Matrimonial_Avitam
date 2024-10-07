@@ -101,13 +101,13 @@ class BlogCard extends StatelessWidget {
                                       },
                                       style: ButtonStyle(
                                         backgroundColor:
-                                            MaterialStateProperty.all(
+                                            WidgetStateProperty.all(
                                                 MyTheme.app_accent_color),
-                                        fixedSize: MaterialStateProperty.all(
+                                        fixedSize: WidgetStateProperty.all(
                                             const Size(90.0, 30.0)),
-                                        overlayColor: MaterialStateProperty.all(
+                                        overlayColor: WidgetStateProperty.all(
                                             MyTheme.app_accent_color),
-                                        shape: MaterialStateProperty.all(
+                                        shape: WidgetStateProperty.all(
                                           const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(8.0)),

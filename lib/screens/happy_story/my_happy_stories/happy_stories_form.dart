@@ -228,8 +228,8 @@ class _HappyStoriesFormState extends State<HappyStoriesForm> {
               child: TextButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(MyTheme.zircon),
-                    shape: MaterialStateProperty.all(
+                        WidgetStateProperty.all<Color>(MyTheme.zircon),
+                    shape: WidgetStateProperty.all(
                       const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(12),

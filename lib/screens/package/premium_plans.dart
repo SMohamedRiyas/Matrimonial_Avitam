@@ -36,8 +36,14 @@ class _PremiumPlansState extends State<PremiumPlans> {
                   color: MyTheme.storm_grey,
                 ),
               )
-            : Container(
-                child: buildBody(context, vm),
+            : SingleChildScrollView(
+                // Wrap content in SingleChildScrollView
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                      vertical:
+                          10), // Add padding for better scrolling experience
+                  child: buildBody(context, vm),
+                ),
               ),
       ),
     );
@@ -49,12 +55,10 @@ class _PremiumPlansState extends State<PremiumPlans> {
       children: [
         // choose your plan
         Container(
-            margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 17),
-            child: buildChoosePlanBar(context)),
-        const SizedBox(
-          height: 40,
+          margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 17),
+          child: buildChoosePlanBar(context),
         ),
-
+        const SizedBox(height: 20),
         // listview of the plan
         buildPackageLists(context, vm),
       ],
@@ -62,7 +66,9 @@ class _PremiumPlansState extends State<PremiumPlans> {
   }
 
   Widget buildPackageLists(BuildContext context, PremiumPlansViewModel vm) {
-    return Expanded(
+    return SizedBox(
+      // Wrap with SizedBox to limit height within the scrollable area
+      height: 500, // Adjust the height as per your layout
       child: vm.list!.isEmpty
           ? Center(
               child: Text(AppLocalizations.of(context)!.common_no_data),
@@ -76,6 +82,7 @@ class _PremiumPlansState extends State<PremiumPlans> {
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 17.0),
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
+      // Horizontal scroll for premium plans
       itemCount: vm.list!.length,
       separatorBuilder: (BuildContext context, int index) => const SizedBox(
         width: 20,
@@ -85,13 +92,15 @@ class _PremiumPlansState extends State<PremiumPlans> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
+              height: 480,
               width: MediaQuery.of(context).size.width * 0.7,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                  boxShadow: [CommonWidget.box_shadow()]),
+                color: Colors.white,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(16),
+                ),
+                boxShadow: [CommonWidget.box_shadow()],
+              ),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -107,31 +116,26 @@ class _PremiumPlansState extends State<PremiumPlans> {
                             height: 40,
                             width: 40,
                           ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
+                    const SizedBox(height: 10.0),
                     Text(
                       vm.list![index].name,
                       style: Styles.regular_arsenic_14,
                     ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
+                    const SizedBox(height: 10.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           vm.list![index].priceText.toString(),
                           style: const TextStyle(
-                              color: MyTheme.app_accent_color,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                            color: MyTheme.app_accent_color,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
+                    const SizedBox(height: 20.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -139,23 +143,17 @@ class _PremiumPlansState extends State<PremiumPlans> {
                           '\u2713  ${vm.list![index].expressInterest} ${AppLocalizations.of(context)!.premium_plans_express_interest}',
                           style: Styles.regular_arsenic_14,
                         ),
-                        const SizedBox(
-                          height: 14.0,
-                        ),
+                        const SizedBox(height: 14.0),
                         Text(
                           '\u2713  ${vm.list![index].photoGallery} ${AppLocalizations.of(context)!.premium_plans_gallery_photo_upload}',
                           style: Styles.regular_arsenic_14,
                         ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
+                        const SizedBox(height: 15.0),
                         Text(
                           '\u2713  ${vm.list![index].contact} ${AppLocalizations.of(context)!.premium_plans_contact_info_view}',
                           style: Styles.regular_arsenic_14,
                         ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
+                        const SizedBox(height: 15.0),
                         Visibility(
                           visible: vm.galleryImagePrivacy,
                           child: Column(
@@ -164,9 +162,7 @@ class _PremiumPlansState extends State<PremiumPlans> {
                                 '\u2713  ${vm.list![index].galleryImageView} Gallery Image View',
                                 style: Styles.regular_arsenic_14,
                               ),
-                              const SizedBox(
-                                height: 15.0,
-                              ),
+                              const SizedBox(height: 15.0),
                             ],
                           ),
                         ),
@@ -178,9 +174,7 @@ class _PremiumPlansState extends State<PremiumPlans> {
                                 '\u2713  ${vm.list![index].profileImageView} Profile Image View',
                                 style: Styles.regular_arsenic_14,
                               ),
-                              const SizedBox(
-                                height: 15.0,
-                              ),
+                              const SizedBox(height: 15.0),
                             ],
                           ),
                         ),
@@ -190,16 +184,12 @@ class _PremiumPlansState extends State<PremiumPlans> {
                               ? Styles.regular_arsenic_14
                               : Styles.regular_arsenic_14_line_through,
                         ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
+                        const SizedBox(height: 15.0),
                         Text(
                           '\u2713  ${vm.list![index].validity} ${AppLocalizations.of(context)!.premium_plans_days}',
                           style: Styles.regular_arsenic_14,
                         ),
-                        const SizedBox(
-                          height: 22.0,
-                        ),
+                        const SizedBox(height: 22.0),
                       ],
                     ),
                     TextButton(
@@ -228,10 +218,12 @@ class _PremiumPlansState extends State<PremiumPlans> {
                       style: vm.list![index].packageId == 1
                           ? ButtonStyle(
                               backgroundColor:
-                                  WidgetStateProperty.all(MyTheme.gull_grey))
+                                  WidgetStateProperty.all(MyTheme.gull_grey),
+                            )
                           : ButtonStyle(
                               backgroundColor: WidgetStateProperty.all(
-                                  MyTheme.app_accent_color)),
+                                  MyTheme.app_accent_color),
+                            ),
                       child: vm.list![index].packageId == 1
                           ? Text(
                               "Purchase",
@@ -242,8 +234,6 @@ class _PremiumPlansState extends State<PremiumPlans> {
                               style: Styles.bold_white_14,
                             ),
                     ),
-
-                    // TextButton(onPressed: (){}, child: child)
                   ],
                 ),
               ),
@@ -258,13 +248,15 @@ class _PremiumPlansState extends State<PremiumPlans> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(AppLocalizations.of(context)!.premium_plans_choose_plan,
-            style: Styles.bold_arsenic_16),
-        const SizedBox(
-          height: 5,
+        Text(
+          AppLocalizations.of(context)!.premium_plans_choose_plan,
+          style: Styles.bold_arsenic_16,
         ),
-        Text(AppLocalizations.of(context)!.premium_plans_choose_plan_sub,
-            style: Styles.regular_gull_grey_16),
+        const SizedBox(height: 5),
+        Text(
+          AppLocalizations.of(context)!.premium_plans_choose_plan_sub,
+          style: Styles.regular_gull_grey_16,
+        ),
       ],
     );
   }

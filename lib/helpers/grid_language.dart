@@ -21,7 +21,9 @@ class GridLanguage extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(LanguageScreen());
+        Get.to(LanguageScreen(
+          fromGrid: true,
+        ));
       },
       child: Column(
         children: [
