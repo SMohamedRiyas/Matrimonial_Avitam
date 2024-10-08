@@ -63,7 +63,7 @@ ThunkAction<AppState> packagePurchaseMiddleware(
       var data = await PackageRepository().packagePurchase(
           amount: amount, packageId: packageId, paymentMethod: paymentMethod);
       Navigator.pop(store.state.packagePaymentWithWalletState!.loadingContext!);
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
 

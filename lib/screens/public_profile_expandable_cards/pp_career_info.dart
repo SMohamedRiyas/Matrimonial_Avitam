@@ -1,9 +1,7 @@
-import 'package:active_matrimonial_flutter_app/helpers/device_info.dart';
-import 'package:active_matrimonial_flutter_app/redux/app/app_state.dart';
+import 'package:active_matrimonial_flutter_app/const/style.dart';
 import 'package:active_matrimonial_flutter_app/screens/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:active_matrimonial_flutter_app/const/style.dart';
 
 class PP_CareerInfo extends StatelessWidget {
   const PP_CareerInfo({Key? key}) : super(key: key);
@@ -14,8 +12,8 @@ class PP_CareerInfo extends StatelessWidget {
       converter: (store) => store.state,
       builder: (_, state) => state.publicProfileState!.career.isNotEmpty
           ? ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
+              physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
               shrinkWrap: true,
               reverse: true,
               itemCount: state.publicProfileState!.career.length,
@@ -28,9 +26,10 @@ class PP_CareerInfo extends StatelessWidget {
                   children: [
                     buildRow(
                         context: context,
-                        localization_text:
-                            AppLocalizations.of(context)!.public_profile_designation,
-                        data: state.publicProfileState!.career[index].designation ??
+                        localization_text: AppLocalizations.of(context)!
+                            .public_profile_designation,
+                        data: state.publicProfileState!.career[index]
+                                .designation ??
                             ''),
                     SizedBox(
                       height: 10,
@@ -59,16 +58,14 @@ class PP_CareerInfo extends StatelessWidget {
                             AppLocalizations.of(context)!.public_profile_end,
                         data:
                             "${state.publicProfileState!.career[index].end ?? ''}"),
-
                     SizedBox(
                       height: 10,
                     ),
                     buildRow(
                         context: context,
-                        localization_text:
-                        "Status",
+                        localization_text: "Status",
                         data:
-                        "${state.publicProfileState!.career[index].present? "Active": "Deactive"}"),
+                            "${state.publicProfileState!.career[index].present ? "Active" : "Deactive"}"),
                   ],
                 );
               },
@@ -79,7 +76,8 @@ class PP_CareerInfo extends StatelessWidget {
     );
   }
 
-  Row buildRow({BuildContext? context, required localization_text, required data}) {
+  Row buildRow(
+      {BuildContext? context, required localization_text, required data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

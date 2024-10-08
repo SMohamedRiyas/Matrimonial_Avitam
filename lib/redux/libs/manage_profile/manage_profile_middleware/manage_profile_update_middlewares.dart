@@ -50,7 +50,7 @@ ThunkAction<AppState> basicInfoUpdateMiddleware(
     );
     // print(response.toJson());
 
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(
           ShowMessageAction(msg: response.message, color: MyTheme.success));
       store.dispatch(basicInfoGetMiddleware());
@@ -73,7 +73,7 @@ ThunkAction<AppState> contactMiddleware({
     try {
       var data = await ManageProfileRepository().contactUpdate(email: email);
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
       } else {
@@ -95,7 +95,7 @@ ThunkAction<AppState> introUpdateMiddleware({dynamic text}) {
     try {
       var data = await ManageProfileRepository().introductionUpdate(text: text);
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
         store.dispatch(introductionGetMiddleware());

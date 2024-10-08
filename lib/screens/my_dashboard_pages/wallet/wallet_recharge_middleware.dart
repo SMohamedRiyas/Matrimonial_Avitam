@@ -13,7 +13,7 @@ ThunkAction<AppState> walletRechargeMiddleware({
     var response =
         await WalletRepository().offlineWalletRecharge(postBody: postBody);
 
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(
           ShowMessageAction(msg: response.message, color: MyTheme.success));
 

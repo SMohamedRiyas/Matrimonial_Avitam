@@ -217,7 +217,7 @@ class _LanguageState extends State<Language> {
         FocusManager.instance.primaryFocus?.unfocus();
         if (!_formKey.currentState!.validate()) {
           // store.dispatch(ShowMessageAction(msg: "Form's not validated!"));
-        } else if (!state!.saveChangesLoader!) {
+        } else if (!state.saveChangesLoader!) {
           store.dispatch(
             languageUpdateMiddleware(
               mother_tongue: state.selectedMotherTongue?.id,

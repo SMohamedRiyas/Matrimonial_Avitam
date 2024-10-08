@@ -56,7 +56,7 @@ offLineWalletRecharge(
 ThunkAction<AppState> getImageAction() {
   return (Store<AppState> store) async {
     try {
-      final image = await store.state!.offlinePaymentState!.picker
+      final image = await store.state.offlinePaymentState!.picker
           .pickImage(source: ImageSource.gallery);
       if (image == null) return;
       final tmpImage = File(image.path);

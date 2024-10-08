@@ -66,7 +66,7 @@ delete(EducationState state, dynamic action) {
 }
 
 delete_education_item(EducationState state, EduDelete action) {
-  state.list!.remove(action.item);
+  state.list.remove(action.item);
   store.dispatch(educationGetMiddleware());
   return state;
 }

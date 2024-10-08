@@ -1,8 +1,6 @@
-import 'package:active_matrimonial_flutter_app/redux/app/app_state.dart';
+import 'package:active_matrimonial_flutter_app/const/style.dart';
 import 'package:active_matrimonial_flutter_app/screens/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:active_matrimonial_flutter_app/const/style.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PP_AstronomicInfo extends StatelessWidget {
@@ -12,9 +10,7 @@ class PP_AstronomicInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, AppState>(
       converter: (store) => store.state,
-      builder: (_, state) => state
-                  .publicProfileState!.astrologies !=
-              null
+      builder: (_, state) => state.publicProfileState!.astrologies != null
           ? Column(
               children: [
                 buildRow(
@@ -22,8 +18,7 @@ class PP_AstronomicInfo extends StatelessWidget {
                     localization_text:
                         AppLocalizations.of(context)!.manage_profile_sun_sign,
                     data:
-                        "${state
-                            .publicProfileState!.astrologies.sunSign ?? ''}"),
+                        "${state.publicProfileState!.astrologies.sunSign ?? ''}"),
                 SizedBox(
                   height: 10,
                 ),
@@ -32,8 +27,7 @@ class PP_AstronomicInfo extends StatelessWidget {
                     localization_text:
                         AppLocalizations.of(context)!.manage_profile_moon_sign,
                     data:
-                        "${state
-                            .publicProfileState!.astrologies.moonSign ?? ''}"),
+                        "${state.publicProfileState!.astrologies.moonSign ?? ''}"),
                 SizedBox(
                   height: 10,
                 ),
@@ -42,8 +36,7 @@ class PP_AstronomicInfo extends StatelessWidget {
                     localization_text: AppLocalizations.of(context)!
                         .manage_profile_time_of_birth,
                     data:
-                        "${state
-                            .publicProfileState!.astrologies.timeOfBirth ?? ''}"),
+                        "${state.publicProfileState!.astrologies.timeOfBirth ?? ''}"),
                 SizedBox(
                   height: 10,
                 ),
@@ -52,8 +45,7 @@ class PP_AstronomicInfo extends StatelessWidget {
                     localization_text: AppLocalizations.of(context)!
                         .manage_profile_city_of_birth,
                     data:
-                        "${state
-                            .publicProfileState!.astrologies.cityOfBirth ?? ''}"),
+                        "${state.publicProfileState!.astrologies.cityOfBirth ?? ''}"),
               ],
             )
           : Center(
@@ -62,7 +54,8 @@ class PP_AstronomicInfo extends StatelessWidget {
     );
   }
 
-  Row buildRow({BuildContext? context, required localization_text, required data}) {
+  Row buildRow(
+      {BuildContext? context, required localization_text, required data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

@@ -24,7 +24,7 @@ class CommonOfflinePayment extends StatefulWidget {
   String? title;
 
   CommonOfflinePayment({
-    Key? key,
+    super.key,
     this.amount = 0.00,
     this.payment_type = "",
     this.payment_method_key = "",
@@ -32,7 +32,7 @@ class CommonOfflinePayment extends StatefulWidget {
     this.details,
     this.manual_payment_id,
     this.title,
-  }) : super(key: key);
+  });
 
   @override
   State<CommonOfflinePayment> createState() => _CommonOfflinePaymentState();

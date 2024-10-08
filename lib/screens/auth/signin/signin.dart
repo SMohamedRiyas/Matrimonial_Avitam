@@ -90,13 +90,13 @@ class _LoginState extends State<Login> {
                         //   ),
                         // ),
                         GroupItemWithChild(
-                          title: isOtpSystem!
+                          title: isOtpSystem
                               ? state.signInState!.isPhone!
                                   ? "Phone"
                                   : "Email"
                               : "Email",
                           style: Styles.bold_app_accent_12,
-                          child: isOtpSystem!
+                          child: isOtpSystem
                               ? Container(
                                   decoration: BoxDecoration(
                                     color: MyTheme.solitude,
@@ -177,7 +177,7 @@ class _LoginState extends State<Login> {
                             child: SizedBox(
                               width: DeviceInfo(context).width,
                               child: Text(
-                                isOtpSystem!
+                                isOtpSystem
                                     ? state.signInState!.isPhone!
                                         ? AppLocalizations.of(context)!
                                             .common_screen_use_email

@@ -19,10 +19,9 @@ class ProfileViewMiddleware extends Middleware<bool, bool> {
         user?.membership == 1 &&
         settingIsActive("full_profile_show_according_to_membership", "1")) {
       YesNoDialog.show(
-        title:
-            LangText(context: context).getLocal()!.please_update_your_package,
+        title: LangText(context: context).getLocal().please_update_your_package,
         content: LangText(context: context)
-            .getLocal()!
+            .getLocal()
             .please_update_your_package_des,
         yestTxt: LangText(context: context).getLocal()?.package_purchase,
         onClickYes: () => AIZRoute.push(context, PremiumPlans()),

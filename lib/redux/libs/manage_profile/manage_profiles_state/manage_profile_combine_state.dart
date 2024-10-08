@@ -14,7 +14,6 @@ import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_
 import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/permanent_address_state.dart';
 import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/physical_attr_state.dart';
 import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/present_addres_state.dart';
-import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/profile_dropdown_state.dart';
 import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/residency_state.dart';
 import 'package:active_matrimonial_flutter_app/redux/libs/manage_profile/manage_profiles_state/spiritual_social_state.dart';
 
@@ -38,73 +37,80 @@ class ManageProfileCombineState {
   final PartnerExpectationState? partnerExpectationState;
 
   ProfiledropdownResponse? profiledropdownResponseData;
-  int? selectedTabIndex =0;
-
+  int? selectedTabIndex = 0;
 
   /// profile drop down state drop down
   /// extras
   //final ProfiledropdownState profiledropdownState;
 
+  ManageProfileCombineState(
+      {this.careerState,
+      this.familyState,
+      this.languageState,
+      this.residencyState,
+      this.contactState,
+      this.educationState,
+      this.basicInfoState,
+      this.lifeStyleState,
+      this.astronomicState,
+      this.introductionState,
+      this.physicalAttrState,
+      this.presentAddressState,
+      this.hobbiesInterestState,
+      //this.profiledropdownState,
+      this.spiritualSocialState,
+      this.permanentAddressState,
+      this.attributeBehaviorState,
+      this.partnerExpectationState,
+      this.selectedTabIndex,
+      this.profiledropdownResponseData});
 
-  ManageProfileCombineState({
-    this.careerState,
-    this.familyState,
-    this.languageState,
-    this.residencyState,
-    this.contactState,
-    this.educationState,
-    this.basicInfoState,
-    this.lifeStyleState,
-    this.astronomicState,
-    this.introductionState,
-    this.physicalAttrState,
-    this.presentAddressState,
-    this.hobbiesInterestState,
-    //this.profiledropdownState,
-    this.spiritualSocialState,
-    this.permanentAddressState,
-    this.attributeBehaviorState,
-    this.partnerExpectationState,
-    this.selectedTabIndex,
-    this.profiledropdownResponseData
-  });
-
-ManageProfileCombineState update({careerState,familyState,languageState,residencyState,contactState,educationState,basicInfoState,lifeStyleState,
-   astronomicState,
-   introductionState,
-   physicalAttrState,
-   presentAddressState,
-   hobbiesInterestState,
-   profiledropdownState,
-   spiritualSocialState,
-   permanentAddressState,
-   attributeBehaviorState,
-   partnerExpectationState,
-   selectedTabIndex,profiledropdownResponseData}){
-  return ManageProfileCombineState(
-      careerState:careerState??this.careerState,
-      familyState:familyState??this.familyState,
-      languageState:languageState??this.languageState,
-      residencyState:residencyState??this.residencyState,
-      contactState:contactState??this.contactState,
-      educationState:educationState??this.educationState,
-      basicInfoState:basicInfoState??this.basicInfoState,
-      lifeStyleState:lifeStyleState??this.lifeStyleState,
-      astronomicState:astronomicState??this.astronomicState,
-      introductionState:introductionState??this.introductionState,
-      physicalAttrState:physicalAttrState??this.physicalAttrState,
-      presentAddressState:presentAddressState??this.presentAddressState,
-      hobbiesInterestState:hobbiesInterestState??this.hobbiesInterestState,
-     // profiledropdownState:profiledropdownState??this.profiledropdownState,
-      spiritualSocialState:spiritualSocialState??this.spiritualSocialState,
-      permanentAddressState:permanentAddressState??this.permanentAddressState,
-      attributeBehaviorState:attributeBehaviorState??this.attributeBehaviorState,
-      partnerExpectationState:partnerExpectationState??this.partnerExpectationState,
-      selectedTabIndex:selectedTabIndex??this.selectedTabIndex,
-      profiledropdownResponseData:profiledropdownResponseData??this.profiledropdownResponseData
-  );
-
-
+  ManageProfileCombineState update(
+      {careerState,
+      familyState,
+      languageState,
+      residencyState,
+      contactState,
+      educationState,
+      basicInfoState,
+      lifeStyleState,
+      astronomicState,
+      introductionState,
+      physicalAttrState,
+      presentAddressState,
+      hobbiesInterestState,
+      profiledropdownState,
+      spiritualSocialState,
+      permanentAddressState,
+      attributeBehaviorState,
+      partnerExpectationState,
+      selectedTabIndex,
+      profiledropdownResponseData}) {
+    return ManageProfileCombineState(
+        careerState: careerState ?? this.careerState,
+        familyState: familyState ?? this.familyState,
+        languageState: languageState ?? this.languageState,
+        residencyState: residencyState ?? this.residencyState,
+        contactState: contactState ?? this.contactState,
+        educationState: educationState ?? this.educationState,
+        basicInfoState: basicInfoState ?? this.basicInfoState,
+        lifeStyleState: lifeStyleState ?? this.lifeStyleState,
+        astronomicState: astronomicState ?? this.astronomicState,
+        introductionState: introductionState ?? this.introductionState,
+        physicalAttrState: physicalAttrState ?? this.physicalAttrState,
+        presentAddressState: presentAddressState ?? this.presentAddressState,
+        hobbiesInterestState: hobbiesInterestState ?? this.hobbiesInterestState,
+        // profiledropdownState:profiledropdownState??this.profiledropdownState,
+        spiritualSocialState: spiritualSocialState ?? this.spiritualSocialState,
+        permanentAddressState:
+            permanentAddressState ?? this.permanentAddressState,
+        attributeBehaviorState:
+            attributeBehaviorState ?? this.attributeBehaviorState,
+        partnerExpectationState:
+            partnerExpectationState ?? this.partnerExpectationState,
+        selectedTabIndex: selectedTabIndex ?? this.selectedTabIndex,
+        profiledropdownResponseData:
+            profiledropdownResponseData ?? this.profiledropdownResponseData);
   }
 
   ManageProfileCombineState.initialState()
@@ -120,11 +126,12 @@ ManageProfileCombineState update({careerState,familyState,languageState,residenc
         residencyState = ResidencyState.initialState(),
         languageState = LanguageState.initialState(),
         presentAddressState = PresentAddressState.initialState(),
-      //  profiledropdownState = ProfiledropdownState.initialState(),
+        //  profiledropdownState = ProfiledropdownState.initialState(),
         astronomicState = AstronomicState.initialState(),
         basicInfoState = BasicInfoState.initialState(),
         hobbiesInterestState = HobbiesInterestState.initialState(),
         attributeBehaviorState = AttitudeBehaviorState.initialState(),
-        profiledropdownResponseData= ProfiledropdownResponse(result: false,data: ProfiledropdownResponseData.init()),
+        profiledropdownResponseData = ProfiledropdownResponse(
+            result: false, data: ProfiledropdownResponseData.init()),
         physicalAttrState = PhysicalAttrState.initialState();
 }

@@ -3,8 +3,8 @@ import 'package:active_matrimonial_flutter_app/const/my_theme.dart';
 import 'package:active_matrimonial_flutter_app/const/style.dart';
 import 'package:active_matrimonial_flutter_app/helpers/device_info.dart';
 import 'package:active_matrimonial_flutter_app/helpers/navigator_push.dart';
-import 'package:active_matrimonial_flutter_app/screens/app_navigation.dart';
 import 'package:active_matrimonial_flutter_app/screens/core.dart';
+import 'package:active_matrimonial_flutter_app/screens/my_dashboard_pages/language/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -102,7 +102,8 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
                       TextButton(
                         onPressed: () {
                           SharedPref().isView = true;
-                          NavigatorPush.push(context, const AppNavigation());
+                          NavigatorPush.push(
+                              context, const LanguageScreen(fromGrid: false));
                         },
                         style: ButtonStyle(
                           fixedSize:

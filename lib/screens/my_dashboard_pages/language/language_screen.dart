@@ -47,9 +47,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
     // Store selected language in SharedPreferences
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('selectedLanguageCode', _selectedLocale.languageCode);
-
-    // Navigate back to the previous screen
-    Navigator.pop(context, true); // Pass `true` to signal a refresh
   }
 
   @override
@@ -93,21 +90,15 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   onPressed: () async {
+                    // Change the language first
                     await _changeLanguage();
+
+                    // Conditional navigation based on 'fromGrid'
                     if (widget.fromGrid) {
-                      // Navigator.of(context).pop();
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => AppNavigation(),
-                      //   ),
-                      // );
+                      Navigator.of(context).pop(true); // Simply pop if fromGrid
                     } else {
-                      // Otherwise, navigate to AppNavigation screen
-                      // SharedPreferences prefs =
-                      //     await SharedPreferences.getInstance();
-                      // await prefs.setBool('isFirstTime', false);
-                      Navigator.push(
+                      // Navigate to AppNavigation screen
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => AppNavigation(),

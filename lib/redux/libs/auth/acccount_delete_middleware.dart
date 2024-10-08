@@ -16,7 +16,7 @@ ThunkAction<AppState> accountDeletionMiddleware() {
     try {
       var data = await AuthRepository().accountDelete();
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
         store.dispatch(ClearAuthData());

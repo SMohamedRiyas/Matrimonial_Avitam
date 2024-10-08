@@ -66,7 +66,7 @@ class _BlogDetailsState extends State<BlogDetails> {
                   onLinkTap: (url, _, __) async {
                     // print(url);
                     if (await canLaunchUrl(Uri.parse(url!))) {
-                      await launchUrl(Uri.parse(url!));
+                      await launchUrl(Uri.parse(url));
                     } else {
                       throw 'Could not launch $url';
                     }

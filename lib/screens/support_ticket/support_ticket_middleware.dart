@@ -42,7 +42,7 @@ ThunkAction<AppState> storeSupportTicketReplyMiddleware(
     );
 
     print(response.result);
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(getSupportTicketMiddleware());
       store.dispatch(
           ShowMessageAction(msg: response.message, color: MyTheme.success));

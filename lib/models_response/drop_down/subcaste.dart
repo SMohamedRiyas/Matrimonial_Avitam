@@ -5,7 +5,6 @@
 import 'dart:convert';
 
 import 'package:active_matrimonial_flutter_app/models_response/common_models/ddown.dart';
-import 'package:active_matrimonial_flutter_app/models_response/drop_down/profile_dropdown_response.dart';
 
 SubcasteResponse subcasteResponseFromJson(String str) =>
     SubcasteResponse.fromJson(json.decode(str));
@@ -35,5 +34,3 @@ class SubcasteResponse {
 
   SubcasteResponse.initialState() : data = [];
 }
-
-

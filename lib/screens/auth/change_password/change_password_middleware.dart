@@ -16,7 +16,7 @@ ThunkAction<AppState> changePasswordMiddlware({old, new_, confirm}) {
       var data = await AuthRepository()
           .changePassword(old: old, new_: new_, confirm: confirm);
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
       } else {

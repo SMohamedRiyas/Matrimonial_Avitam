@@ -18,7 +18,7 @@ ThunkAction<AppState> acceptInterestMiddleware({userId}) {
           await InterestRepository().accept_interest_requests(userId: userId);
       store.dispatch(AcceptRejectActions.accept);
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
         store.dispatch(Reset.interestRequestList);

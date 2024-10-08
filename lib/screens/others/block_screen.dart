@@ -57,7 +57,7 @@ class _BlockScreenState extends State<BlockScreen> {
                   store.dispatch(signOutMiddleware(context));
                 },
                 text: Text(
-                  LangText(context: SystemHelper.context).getLocal()!.logout,
+                  LangText(context: SystemHelper.context).getLocal().logout,
                   style: TextStyle(
                       fontSize: 16,
                       color: MyTheme.white,

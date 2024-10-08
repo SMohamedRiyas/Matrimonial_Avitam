@@ -15,7 +15,7 @@ ThunkAction<AppState> addShortlistMiddleware({required int userId}) {
       var data = await ShortlistRepository().add_to_shortList(userId: userId);
       store.dispatch(LoadAction());
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
         store.dispatch(memberInfoMiddleware(userId: userId));

@@ -25,7 +25,7 @@ import '../../../models_response/Explore/review_response.dart';
 import 'explore_middleware.dart';
 
 class Explore extends StatefulWidget {
-  const Explore({Key? key}) : super(key: key);
+  const Explore({super.key});
 
   @override
   State<Explore> createState() => _ExploreState();
@@ -258,7 +258,7 @@ class _ExploreState extends State<Explore> {
                         : Center(
                             child: Text(
                               AppLocalizations.of(context)!.common_no_data,
-                              style: TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.black),
                             ),
                           )
               ],
@@ -423,7 +423,7 @@ class _ExploreState extends State<Explore> {
         Padding(
           padding: EdgeInsets.only(left: Const.kPaddingHorizontal),
           child: Text(
-            getSettingValue("premium_member_section_title"),
+            AppLocalizations.of(context)!.home_9_premium_members,
             style: Styles.bold_app_accent_22,
           ),
         ),

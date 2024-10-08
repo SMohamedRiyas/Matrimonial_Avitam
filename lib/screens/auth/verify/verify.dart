@@ -103,7 +103,7 @@ class _VerifyState extends State<Verify> {
                               },
                               child: Text(
                                 LangText(context: SystemHelper.context)
-                                    .getLocal()!
+                                    .getLocal()
                                     .or_logout,
                                 style: const TextStyle(
                                     fontSize: 16,

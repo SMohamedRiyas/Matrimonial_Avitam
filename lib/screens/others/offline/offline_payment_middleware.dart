@@ -12,7 +12,7 @@ ThunkAction<AppState> offlinePaymentMiddleware({
     store.state.offlinePaymentState!.isSubmit = true;
     var response = await PaymentRepository().offlinePayment(postBody: postBody);
 
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(
           ShowMessageAction(msg: response.message, color: MyTheme.success));
 

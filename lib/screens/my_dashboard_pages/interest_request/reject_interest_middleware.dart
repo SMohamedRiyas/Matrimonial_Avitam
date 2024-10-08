@@ -10,7 +10,7 @@ ThunkAction<AppState> rejectInterestMiddleware({ctx, userId}) {
       var data =
           await InterestRepository().reject_interest_requests(userId: userId);
 
-      if (data.result!) {
+      if (data.result) {
         store.dispatch(
             ShowMessageAction(msg: data.message, color: MyTheme.success));
         store.dispatch(Reset.interestRequestList);

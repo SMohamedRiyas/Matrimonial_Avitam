@@ -33,12 +33,12 @@ class PackageCard extends StatelessWidget {
     var _arsenic = MyTheme.arsenic;
     double? packageCardHeight;
     if ((profilePicturePrivacy == true) && (galleryPicturePrivacy == true)) {
-      packageCardHeight = 385.0;
+      packageCardHeight = MediaQuery.of(context).size.height * 0.7;
     } else if ((profilePicturePrivacy == false) &&
         (galleryPicturePrivacy == false)) {
-      packageCardHeight = 325.0;
+      packageCardHeight = MediaQuery.of(context).size.height * 0.5;
     } else {
-      packageCardHeight = 355.0;
+      packageCardHeight = MediaQuery.of(context).size.height * 0.6;
     }
 
     return Container(
@@ -114,7 +114,7 @@ class PackageCard extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                        '\u2022 ${packageList![index].expressInterest} Express Interests',
+                                        '\u2022 ${packageList![index].expressInterest} ${AppLocalizations.of(context)!.premium_plans_express_interest}',
                                         style: packageList![index].price == 0
                                             ? Styles.regular_arsenic_12
                                             : Styles.regular_solitude_12),
@@ -122,7 +122,7 @@ class PackageCard extends StatelessWidget {
                                       height: 14.0,
                                     ),
                                     Text(
-                                        '\u2022 ${packageList![index].photoGallery} Gallery Photo Upload',
+                                        '\u2022 ${packageList![index].photoGallery} ${AppLocalizations.of(context)!.premium_plans_gallery_photo_upload}',
                                         style: packageList![index].price == 0
                                             ? Styles.regular_arsenic_12
                                             : Styles.regular_solitude_12),
@@ -130,7 +130,7 @@ class PackageCard extends StatelessWidget {
                                       height: 14.0,
                                     ),
                                     Text(
-                                        '\u2022 ${packageList![index].contact} Contact Info View',
+                                        '\u2022 ${packageList![index].contact} ${AppLocalizations.of(context)!.premium_plans_contact_info_view}',
                                         style: packageList![index].price == 0
                                             ? Styles.regular_arsenic_12
                                             : Styles.regular_solitude_12),
@@ -173,7 +173,8 @@ class PackageCard extends StatelessWidget {
                                             ],
                                           )
                                         : Container(),
-                                    Text('\u2022 Show Auto Profile Match',
+                                    Text(
+                                        '\u2022 ${AppLocalizations.of(context)!.premium_plans_show_profile_match}',
                                         style: packageList![index].price == 0
                                             ? Styles.regular_arsenic_12
                                             : packageList![index]
@@ -189,7 +190,7 @@ class PackageCard extends StatelessWidget {
                                       height: 14.0,
                                     ),
                                     Text(
-                                        '\u2022 ${packageList![index].validity} Days',
+                                        '\u2022 ${packageList![index].validity} ${AppLocalizations.of(context)!.premium_plans_days}',
                                         style: packageList![index].price == 0
                                             ? Styles.regular_arsenic_12
                                             : Styles.regular_solitude_12),

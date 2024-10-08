@@ -496,7 +496,7 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   width: 8.3,
                 ),
-                buildAppName(width!)
+                buildAppName(width)
               ],
             ),
             Row(
@@ -618,7 +618,7 @@ class _HomeState extends State<Home> {
                                   (vm.myMembershipType == 'Free'))
                               ? store.dispatch(ShowMessageAction(
                                   msg: "Please update your package."))
-                              : vm.expressInterest!(userId: user.userId);
+                              : vm.expressInterest(userId: user.userId);
                         }
                       },
                       icon: vm.activeMembers![index].interestStatus ==

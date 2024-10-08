@@ -5,7 +5,6 @@
 import 'dart:convert';
 
 import 'package:active_matrimonial_flutter_app/models_response/common_models/ddown.dart';
-import 'package:active_matrimonial_flutter_app/models_response/drop_down/profile_dropdown_response.dart';
 
 CasteResponse casteResponseFromJson(String str) =>
     CasteResponse.fromJson(json.decode(str));
@@ -33,6 +32,7 @@ class CasteResponse {
 
   CasteResponse.initialState() : data = [];
 }
+
 class CasteResponseForPartnerPref {
   CasteResponseForPartnerPref({
     this.data,
@@ -40,7 +40,8 @@ class CasteResponseForPartnerPref {
 
   List<DDown>? data;
 
-  factory CasteResponseForPartnerPref.fromJson(Map<String, dynamic> json) => CasteResponseForPartnerPref(
+  factory CasteResponseForPartnerPref.fromJson(Map<String, dynamic> json) =>
+      CasteResponseForPartnerPref(
         data: json["data"] == null
             ? null
             : List<DDown>.from(json["data"].map((x) => DDown.fromJson(x))),
@@ -54,5 +55,3 @@ class CasteResponseForPartnerPref {
 
   CasteResponseForPartnerPref.initialState() : data = [];
 }
-
-

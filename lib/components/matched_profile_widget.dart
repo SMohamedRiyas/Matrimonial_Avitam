@@ -6,7 +6,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../const/const.dart';
 import '../const/my_theme.dart';
 import '../const/style.dart';
-import '../helpers/navigator_push.dart';
 import '../redux/app/app_state.dart';
 import '../screens/user_pages/user_public_profile.dart';
 import 'common_widget.dart';
@@ -62,14 +61,13 @@ class MatchedProfileWidget extends StatelessWidget {
                               itemCount: state
                                   .matchedProfileState!.matchedProfiles!.length,
                               itemBuilder: (BuildContext context, int index) {
-                                var user = state
-                                    .matchedProfileState!.matchedProfiles![index];
+                                var user = state.matchedProfileState!
+                                    .matchedProfiles![index];
                                 if (user == null) {
                                   return Const.heightShrink;
                                 }
                                 return GestureDetector(
                                   onTap: () {
-
                                     AIZRoute.push(
                                         context,
                                         UserPublicProfile(
@@ -77,7 +75,7 @@ class MatchedProfileWidget extends StatelessWidget {
                                         ),
                                         middleware: ProfileViewMiddleware(
                                             context: context,
-                                            user:state.authState?.userData));
+                                            user: state.authState?.userData));
                                   },
                                   child: Row(
                                     children: [
@@ -89,7 +87,8 @@ class MatchedProfileWidget extends StatelessWidget {
                                             Radius.circular(12),
                                           ),
                                           image: DecorationImage(
-                                            image: NetworkImage(user.photo??""),
+                                            image:
+                                                NetworkImage(user.photo ?? ""),
                                           ),
                                         ),
                                       ),
@@ -103,7 +102,7 @@ class MatchedProfileWidget extends StatelessWidget {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              user.name??"",
+                                              user.name ?? "",
                                               style: Styles.bold_white_14,
                                             ),
                                             Column(
@@ -111,7 +110,7 @@ class MatchedProfileWidget extends StatelessWidget {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  '${user.age} yrs, ${user.height} feet, ${user.maritalStatus??""},',
+                                                  '${user.age} yrs, ${user.height} feet, ${user.maritalStatus ?? ""},',
                                                   style:
                                                       Styles.regular_white_12,
                                                 ),
@@ -141,8 +140,8 @@ class MatchedProfileWidget extends StatelessWidget {
                       alignment: Alignment.center,
                       child: MySmoothIndicator.worm_effect(
                           controller: matched_profile_controller,
-                          length:
-                              state.matchedProfileState!.matchedProfiles!.length),
+                          length: state
+                              .matchedProfileState!.matchedProfiles!.length),
                     )
                   ],
                 ),

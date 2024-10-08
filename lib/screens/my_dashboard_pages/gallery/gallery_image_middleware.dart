@@ -24,7 +24,7 @@ ThunkAction<AppState> galleryImageDeleteMiddleware({id}) {
   return (Store<AppState> store) async {
     try {
       var data = await GalleryRepository().deleteGalleryImage(id: id);
-      data.result!
+      data.result
           ? store.dispatch(
               ShowMessageAction(msg: data.message, color: MyTheme.success))
           : store.dispatch(
@@ -46,7 +46,7 @@ ThunkAction<AppState> gallery_image_save({dynamic photo}) {
 
     var response = await GalleryRepository().saveGalleryImage(photo: photo);
 
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(galleryImageMiddleware());
       store.dispatch(accountMiddleware());
       store.dispatch(

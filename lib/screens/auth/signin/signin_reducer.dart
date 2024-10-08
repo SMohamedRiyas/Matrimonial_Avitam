@@ -35,7 +35,7 @@ SignInState? sign_in_reducer(SignInState? state, dynamic action) {
     FocusManager.instance.primaryFocus?.unfocus();
 
     print(state!.phoneNumber);
-    if (!requiredFieldVerification(state!)) {
+    if (!requiredFieldVerification(state)) {
       return state;
     }
     bool isOtp = store.state.addonState!.data?.otpSystem ?? false;
@@ -74,7 +74,7 @@ bool requiredFieldVerification(SignInState state) {
       state.emailErrorText = "Please enter mobile number";
       return false;
     }
-  } else if (state!.emailController!.text.isEmpty) {
+  } else if (state.emailController!.text.isEmpty) {
     state.emailErrorText = "Please enter email address";
     return false;
   } else if (!RegExp(r'\S+@\S+\.\S+').hasMatch(state.emailController!.text)) {

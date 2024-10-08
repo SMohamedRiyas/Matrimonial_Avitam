@@ -20,7 +20,7 @@ ThunkAction<AppState> supportTicketCreateMiddleware({
       image: image,
     );
 
-    if (response.result!) {
+    if (response.result) {
       store.dispatch(getSupportTicketMiddleware());
       store.dispatch(ShowMessageAction(
           msg: "Information Successfully saved!", color: MyTheme.success));

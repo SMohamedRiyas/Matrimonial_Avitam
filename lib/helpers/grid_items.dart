@@ -64,7 +64,7 @@ class GridItems {
           icon: "icon_gallery_view.png",
           isSmallScreen: false,
           text: LangText(context: OneContext().context)
-              .getLocal()!
+              .getLocal()
               .gallery_picture_screen_appbar_title,
         ),
       GridSquareCard(
